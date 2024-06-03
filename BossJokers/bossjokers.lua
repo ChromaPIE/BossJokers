@@ -10,10 +10,6 @@
 local jokers = {
     theclub = {
        name = "Club Joker",
-       text = {
-           "Retrigger all",
-           "{C:clubs}Club{} suit cards",
-       },
        config = {extra = 1},
        pos = { x = 0, y = 0 },
        rarity= 2,
@@ -31,7 +27,7 @@ local jokers = {
             if context.cardarea == G.play then
                 if context.other_card:is_suit("Clubs") then
                         return {
-                            message = "Again!",
+                            message = localize('k_again_ex'),
                             repetitions = 1,
                             card = self
                             }
@@ -40,7 +36,7 @@ local jokers = {
                 if (next(context.card_effects[1]) or #context.card_effects > 1) then
                     if context.other_card:is_suit("Clubs") then
                         return {
-                            message = "Again!",
+                            message = localize('k_again_ex'),
                             repetitions = 1,
                             card = self
                         }
@@ -62,10 +58,6 @@ local jokers = {
 
    thewindow = {
     name = "Window Joker",
-    text = {
-        "Retrigger all",
-        "{C:diamonds}Diamond{} suit cards",
-    },
     config = {extra = 1},
     pos = { x = 0, y = 0 },
     rarity= 2,
@@ -83,7 +75,7 @@ local jokers = {
          if context.cardarea == G.play then
              if context.other_card:is_suit("Diamonds") then
                      return {
-                         message = "Again!",
+                         message = localize('k_again_ex'),
                          repetitions = 1,
                          card = self
                          }
@@ -92,7 +84,7 @@ local jokers = {
              if (next(context.card_effects[1]) or #context.card_effects > 1) then
                  if context.other_card:is_suit("Diamonds") then
                      return {
-                         message = "Again!",
+                         message = localize('k_again_ex'),
                          repetitions = 1,
                          card = self
                      }
@@ -114,10 +106,6 @@ local jokers = {
 
     thegoad = {
         name = "Goad Joker",
-        text = {
-            "Retrigger all",
-            "{C:spades}Spade{} suit cards",
-        },
         config = {extra = 1},
         pos = { x = 0, y = 0 },
         rarity= 2,
@@ -135,7 +123,7 @@ local jokers = {
              if context.cardarea == G.play then
                  if context.other_card:is_suit("Spades") then
                          return {
-                             message = "Again!",
+                             message = localize('k_again_ex'),
                              repetitions = 1,
                              card = self
                              }
@@ -144,7 +132,7 @@ local jokers = {
                  if (next(context.card_effects[1]) or #context.card_effects > 1) then
                      if context.other_card:is_suit("Spades") then
                          return {
-                             message = "Again!",
+                             message = localize('k_again_ex'),
                              repetitions = 1,
                              card = self
                          }
@@ -166,10 +154,6 @@ local jokers = {
 
     thehead = {
         name = "Head Joker",
-        text = {
-            "Retrigger all",
-            "{C:hearts}Heart{} suit cards",
-        },
         config = {extra = 1},
         pos = { x = 0, y = 0 },
         rarity= 2,
@@ -187,7 +171,7 @@ local jokers = {
              if context.cardarea == G.play then
                  if context.other_card:is_suit("Hearts") then
                          return {
-                             message = "Again!",
+                             message = localize('k_again_ex'),
                              repetitions = 1,
                              card = self
                              }
@@ -196,7 +180,7 @@ local jokers = {
                  if (next(context.card_effects[1]) or #context.card_effects > 1) then
                      if context.other_card:is_suit("Hearts") then
                          return {
-                             message = "Again!",
+                             message = localize('k_again_ex'),
                              repetitions = 1,
                              card = self
                          }
@@ -218,10 +202,6 @@ local jokers = {
 
     theplant = {
         name = "Plant Joker",
-        text = {
-            "Retrigger {C:attention}all{}",
-            "{C:attention}face{} cards"
-        },
         config = {extra = 1},
         pos = { x = 0, y = 0 },
         rarity= 3,
@@ -239,7 +219,7 @@ local jokers = {
              if context.cardarea == G.play then
                  if context.other_card:is_face() then
                          return {
-                             message = "Again!",
+                             message = localize('k_again_ex'),
                              repetitions = 1,
                              card = self
                              }
@@ -248,7 +228,7 @@ local jokers = {
                  if (next(context.card_effects[1]) or #context.card_effects > 1) then
                      if context.other_card:is_face() then
                          return {
-                             message = "Again!",
+                             message = localize('k_again_ex'),
                              repetitions = 1,
                              card = self
                          }
@@ -270,9 +250,6 @@ local jokers = {
 
    theneedle = {
     name = "Needle Joker",
-    text = {
-        "{C:blue}+1{} hand",
-    },
     config = {extra = 1},
     pos = { x = 0, y = 0 },
     rarity= 2,
@@ -303,10 +280,6 @@ local jokers = {
 
     thewater = {
         name = "Water Joker",
-        text = {
-            "Sell this card to",
-            "get {C:red}+3{} discards",
-        },
         config = {extra = 3},
         pos = { x = 0, y = 0 },
         rarity= 2,
@@ -337,10 +310,6 @@ local jokers = {
 
     thetooth = {
         name = "Tooth Joker",
-        text = {
-            "All played cards earn",
-            "{C:money}$1{} when scored"
-        },
         config = {extra = 1},
         pos = { x = 0, y = 0 },
         rarity= 3,
@@ -378,11 +347,6 @@ local jokers = {
 
     thearm = {
         name = "Arm Joker",
-        text = {
-            "Sell this card to",
-            "{C:attention}upgrade{} the most played",
-            "{C:attention}Poker hand{} by 3 levels",
-        },
         config = {extra = 3},
         pos = { x = 0, y = 0 },
         rarity= 2,
@@ -422,10 +386,6 @@ local jokers = {
 
     thewall = {
         name = "Wall Joker",
-        text = {
-            "Sell this card to",
-            "{C:attention}Halve{} the blind",
-        },
         config = {extra = 3},
         pos = { x = 0, y = 0 },
         rarity= 2,
@@ -461,11 +421,6 @@ local jokers = {
 
     theox = {
         name = "Ox Joker",
-        text = {
-            "Earn {C:money}$1{} for every",
-            "time this {C:attention}poker hand{}",
-            "has been played",
-        },
         config = {max = 5},
         pos = { x = 0, y = 0 },
         rarity= 3,
@@ -512,10 +467,6 @@ local jokers = {
 
     theflint = {
         name = "Flint Joker",
-        text = {
-            "Scored cards give",
-            "{X:mult,C:white}X1.2{} Mult",
-        },
         config = {extra = {Xmult = 1.2}},
         pos = { x = 0, y = 0 },
         rarity= 3,
@@ -554,10 +505,6 @@ local jokers = {
 
     thepsychic = {
         name = "Psychic Joker",
-        text = {
-            "{X:mult,C:white}X2{} mult if a hand",
-            "has {C:attention}less{} than 5 cards",
-        },
         config = {extra = {size = 4, xmult = 2}},
         pos = { x = 0, y = 0 },
         rarity= 3,
@@ -593,10 +540,6 @@ local jokers = {
 
     thehook = {
         name = "Hook Joker",
-        text = {
-            "Draw {C:attention}2{} extra cards",
-            "after each hand played",
-        },
         config = {extra = 1},
         pos = { x = 0, y = 0 },
         rarity= 3,
@@ -631,11 +574,6 @@ local jokers = {
 
     themouth = {
         name = "Mouth Joker",
-        text = {
-            "{X:mult,C:white}X3{} mult unless this",
-            "{C:attention}Poker hand{} has already",
-            "been played this round",
-        },
         config = {extra = {Xmult = 3}},
         pos = { x = 0, y = 0 },
         rarity= 3,
@@ -671,11 +609,6 @@ local jokers = {
 
     theeye = {
         name = "Eye Joker",
-        text = {
-            "Upgrade level of played",
-            "{C:attention}Poker hand{} if it has",
-            "already been played this round",
-        },
         config = {extra = {Xmult = 3}},
         pos = { x = 0, y = 0 },
         rarity= 2,
@@ -712,11 +645,6 @@ local jokers = {
 
     themanacle = {
         name = "Manacle Joker",
-        text = {
-            "This Joker gains {X:mult,C:white}X0.25{} mult",
-            "per hand size",
-            "{C:inactive}(Currently at{} {X:mult,C:white}X#1#{} {C:inactive}mult){}",
-        },
         config = {extra = {Xmult = 1}},
         pos = { x = 0, y = 0 },
         rarity= 3,
@@ -757,12 +685,6 @@ local jokers = {
 
     themark = {
         name = "Mark Joker",
-        text = {
-            "Each {C:attention}face{} card",
-            "held in hand has",
-            "a 1 in 4 chance to",
-            "create a tarot card"
-        },
         config = {extra = {odds = 6}},
         pos = { x = 0, y = 0 },
         rarity= 3,
@@ -817,12 +739,6 @@ local jokers = {
 
     thefish = {
         name = "Fish Joker",
-        text = {
-            "{C:atteention}1 in 10{} chance to",
-            "create a {C:spectral}Spectral{} card",
-            "after each hand played",
-            "{C:inactive}(Must have room){}"
-        },
         config = {extra = {odds = 10}},
         pos = { x = 0, y = 0 },
         rarity= 3,
@@ -873,10 +789,6 @@ local jokers = {
 
     thewheel = {
         name = "Wheel Joker",
-        text = {
-            "{C:green}1 in 7{} chance to",
-            "draw an extra card"
-        },
         config = {extra = {odds = 7, draws = 1}},
         pos = { x = 0, y = 0 },
         rarity= 2,
@@ -908,10 +820,6 @@ local jokers = {
 
     theserpent = {
         name = "Serpent Joker",
-        text = {
-            "After playing or discarding",
-            "draw an extra card"
-        },
         config = {},
         pos = { x = 0, y = 0 },
         rarity= 2,
@@ -944,10 +852,6 @@ local jokers = {
 
     thepillar = {
         name = "Pillar Joker",
-        text = {
-            "Retrigger all cards that",
-            "{C:attention}have been played this ante{}",
-        },
         config = {extra = {cards = { }}},
         pos = { x = 0, y = 0 },
         rarity= 2,
@@ -972,7 +876,7 @@ local jokers = {
                     for i, v in pairs(self.ability.extra.cards) do
                         if v == context.other_card.base.id .. context.other_card.base.suit then
                             return {
-                                message = "Again!",
+                                message = localize('k_again_ex'),
                                 repetitions = 1,
                                 card = self
                                 }
@@ -983,7 +887,7 @@ local jokers = {
                         for i, v in pairs(self.ability.extra.cards) do
                             if v == context.other_card.base.id .. context.other_card.base.suit then
                                 return {
-                                    message = "Again!",
+                                    message = localize('k_again_ex'),
                                     repetitions = 1,
                                     card = self
                                     }
@@ -1013,12 +917,6 @@ local jokers = {
 
     thehouse = {
         name = "House Joker",
-        text = {
-            "{C:green}1 in 6{} chance to",
-            "create a {C:spectral}Spectral{} card",
-            "when {C:attention}Blind{} is selected",
-            "{C:inactive}(Must have room)"
-        },
         config = {extra = {odds = 6}},
         pos = { x = 0, y = 0 },
         rarity= 3,
@@ -1074,59 +972,58 @@ function SMODS.INIT.BossJokers()
     local jlocalization = {
 
         theclub = {
-            name = "Club Joker",
+            name = "{C:red}棍棒{}小丑",
             text = {
-                "Retrigger all",
-                "{C:clubs}Club{} suit cards"
+                "重新触发",
+                "所以{C:clubs}梅花{}牌"
             }
         },
         thewindow = {
-            name = "Window Joker",
+            name = "{C:red}窗户{}小丑",
             text = {
-                "Retrigger all",
-                "{C:diamonds}Diamond{} suit cards"
+                "重新触发",
+                "所有{C:diamonds}方片{}牌"
             }
         },
         thegoad = {
-            name = "Goad Joker",
+            name = "{C:red}刺棒{}小丑",
             text = {
-                "Retrigger all",
-                "{C:spades}Spade{} suit cards"
+                "重新触发",
+                "所有{C:spades}黑桃{}牌"
             }
         },
         thehead = {
-            name = "Head Joker",
+            name = "{C:red}头{}小丑",
             text = {
-                "Retrigger all",
-                "{C:hearts}Heart{} suit cards"
+                "重新触发",
+                "所有{C:hearts}红心{}牌"
             }
         },
         theplant = {
-            name = "Plant Joker",
+            name = "{C:red}植物{}小丑",
             text = {
-                "Retrigger {C:attention}all{}",
-                "{C:attention}face{} cards"
+                "重新触发",
+                "{C:attention}所有人头牌"
             }
         },
         theneedle = {
-            name = "Needle Joker",
+            name = "{C:red}针{}小丑",
             text = {
-                "{C:blue}+1{} hand",
-                "each round"
+                "每回合{C:blue}+1{}出牌次数"
             }
         },
         thewater = {
-            name = "Water Joker",
+            name = "{C:red}水{}小丑",
             text = {
-                "Sell this card to",
-                "get {C:red}+3{} discards",
+                "售出本牌即可获得",
+                "{C:red}+3{}弃牌次数"
             }
         },
         thetooth = {
-            name = "Tooth Joker",
+            name = "{C:red}牙齿{}小丑",
             text = {
-                "All played cards earn",
-                "{C:money}$1{} when scored"
+                "每张打出的牌",
+                "在计分时均给予{C:money}$1"
             }
         },
         thearm = {
@@ -1145,19 +1042,19 @@ function SMODS.INIT.BossJokers()
             }
         },
         theox = {
-            name = "Ox Joker",
+            name = "{C:red}公牛{}小丑",
             text = {
-                "Earn {C:money}$1{} for every",
-                "time this {C:attention}poker hand{}",
-                "has been played",
-                "{C:inactive}(Max of $5){}"
+                "出牌时，其{C:attention}牌型",
+                "每已被打出一次",
+                "给予{C:money}$1",
+                "{C:inactive}（至多给予$5）"
             }
         },
         theflint = {
-            name = "Flint Joker",
+            name = "{C:red}燧石{}小丑",
             text = {
-                "Scored cards give",
-                "{X:mult,C:white}X1.2{} Mult",
+                "每张牌在计分时",
+                "给予{X:mult,C:white} X1.2 {}倍率",
             }
         },
         thepsychic = {
@@ -1168,26 +1065,26 @@ function SMODS.INIT.BossJokers()
             }
         },
         thehook = {
-            name = "Hook Joker",
+            name = "{C:red}钩子{}小丑",
             text = {
-                "Draw {C:attention}2{} extra cards",
-                "after each hand played"
+                "每次出牌后",
+                "额外抽{C:attention}2{}张牌"
             }
         },
         themouth = {
-            name = "Mouth Joker",
+            name = "{C:red}嘴巴{}小丑",
             text = {
-                "{X:mult,C:white}X3{} mult unless this",
-                "{C:attention}Poker hand{} has already",
-                "been played this round"
+                "若出牌{C:attention}牌型{}为",
+                "本回合首次打出",
+                "{X:mult,C:white}X3{}倍率"
             }
         },
         theeye = {
-            name = "Eye Joker",
+            name = "{C:red}眼睛{}小丑",
             text = {
-                "Upgrade level of played",
-                "{C:attention}Poker hand{} if it has",
-                "already been played this round"
+                "若出牌{C:attention}牌型",
+                "非本回合首次打出",
+                "则提升其等级"
             }
         },
         themanacle = {
@@ -1218,33 +1115,33 @@ function SMODS.INIT.BossJokers()
             }
         },
         thewheel = {
-            name = "Wheel Joker",
+            name = "{C:red}车轮{}小丑",
             text = {
-                "{C:green}#1# in #2#{} chance to",
-                "draw an extra card"
+                "有{C:green}#1#/#2#{}的几率",
+                "额外抽一张牌"
             },
         },
         theserpent = {
-            name = "Serpent Joker",
+            name = "{C:red}蛇{}小丑",
             text = {
-                "After playing or discarding",
-                "draw an extra card"
+                "出牌或弃牌后",
+                "额外抽一张牌"
             },
         },
         thepillar = {
-            name = "Pillar Joker",
+            name = "{C:red}支柱{}小丑",
             text = {
-                "Retrigger all cards that",
-                "{C:attention}have been played this ante{}",
+                "本底注中打出过的牌",
+                "{C:attention}均会重新触发",
             },
         },
         thehouse = {
-            name = "House Joker",
+            name = "{C:red}房屋{}小丑",
             text = {
-                "{C:green}#1# in #2#{} chance to",
-                "create a {C:spectral}Spectral{} card",
-                "when {C:attention}Blind{} is selected",
-                "{C:inactive}(Must have room)"
+                "选择{C:attention}盲注{}时",
+                "有{C:green}#1#/#2#{}的几率",
+                "生成一张{C:spectral}幻灵牌",
+                "{C:inactive}（必须有空位）"
             },
         }
     }
@@ -1252,6 +1149,7 @@ function SMODS.INIT.BossJokers()
    init_localization()
 
    for k, v in pairs(jokers) do
+       table.insert(jlocalization[k].text, "{C:inactive}（{C:dark_edition}Boss小丑{C:inactive}：对应Boss盲注{C:red}失效{C:inactive}）")
        local joker = SMODS.Joker:new(v.name, k, v.config, v.pos, jlocalization[k], v.rarity, v.cost, v.unlocked, v.discovered, v.blueprint_compat, v.eternal_compat, v.effect, v.atlas ,v.soul_pos)
        joker:register()
        
