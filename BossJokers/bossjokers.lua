@@ -1027,11 +1027,11 @@ function SMODS.INIT.BossJokers()
             }
         },
         thearm = {
-            name = "Arm Joker",
+            name = "{C:red}手臂{}小丑",
             text = {
-                "Sell this card to",
-                "{C:attention}upgrade{} the most played",
-                "{C:attention}Poker hand{} by 3 levels"
+                "售出本牌即可使",
+                "最常打出的{C:attention}牌型",
+                "{C:attention}提升{}3级"
             }
         },
         thewall = {
@@ -1088,21 +1088,19 @@ function SMODS.INIT.BossJokers()
             }
         },
         themanacle = {
-            name = "Manacle Joker",
+            name = "{C:red}镣铐{}小丑",
             text = {
-                "This Joker gains {X:mult,C:white}X0.25{} mult",
-                "per hand size",
-                "{C:inactive}(Currently at{} {X:mult,C:white}X#1#{} {C:inactive}mult){}"
+                "手牌上限每有1，{X:mult,C:white}X0.25{}倍率",
+                "{C:inactive}（当前为{X:mult,C:white}X#1#{C:inactive}倍率）"
             }
         },
         themark = {
-            name = "Mark Joker",
+            name = "{C:red}标记{}小丑",
             text = {
-                "Each {C:attention}face{} card",
-                "held in hand has",
-                "a {C:green}#1# in #2#{} chance to",
-                "create a {C:tarot}Tarot{} card",
-                "{C:inactive}(Must have room){}"
+                "手牌中的每张{C:attention}人头牌",
+                "均有{C:green}#1#/#2#{}的几率",
+                "生成一张{C:tarot}塔罗牌",
+                "{C:inactive}（必须有空位）"
             }
         },
         thefish = {
