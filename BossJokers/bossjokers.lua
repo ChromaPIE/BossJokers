@@ -1104,12 +1104,12 @@ function SMODS.INIT.BossJokers()
             }
         },
         thefish = {
-            name = "Fish Joker",
+            name = "{C:red}鱼{}小丑",
             text = {
-                "{C:green}#1# in #2#{} chance to",
-                "create a {C:spectral}Spectral{} card",
-                "after each hand played",
-                "{C:inactive}(Must have room){}"
+                "每次出牌后",
+                "均有{C:green}#1#/#2#{}的几率",
+                "生成一张{C:spectral}幻灵牌",
+                "{C:inactive}（必须有空位）"
             }
         },
         thewheel = {

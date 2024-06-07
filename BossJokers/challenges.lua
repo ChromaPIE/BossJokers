@@ -11,9 +11,9 @@ function SMODS.INIT.BossJokersChallenges()
 
     init_localization()
 
-    G.localization.misc.challenge_names["c_rich_play_1"] = "Rich Play"
-    G.localization.misc.challenge_names["c_startup_1"] = "Startup"
-    G.localization.misc.challenge_names["c_spectral_merchant_1"] = "Spectral Merchant"
+    G.localization.misc.challenge_names["c_rich_play_1"] = "富裕仗"
+    G.localization.misc.challenge_names["c_startup_1"] = "拔地而起"
+    G.localization.misc.challenge_names["c_spectral_merchant_1"] = "幻灵牌商人"
 
     table.insert(G.CHALLENGES,#G.CHALLENGES+1,
             {name = 'Rich Play',
@@ -202,13 +202,13 @@ function Game.start_run(self, args)
 end
 
     G.localization.misc.v_text.ch_c_no_shop_planets = {
-        "{C:planet}Planet{} cards no longer appear in the {C:attention}shop"}
+        "{C:attention}商店{}内不再出现{C:planet}星球牌"}
 
     G.localization.misc.v_text.ch_c_shop_spectrals = {
-        "{C:spectral}Spectral{} cards may appear in the {C:attention}shop"}
+        "{C:attention}商店{}内不再出现{C:spectral}幻灵牌"}
 
         G.localization.misc.v_text.ch_c_no_shop_tarots = {
-            "{C:tarot}Tarot{} cards no longer appear in the {C:attention}shop"}
+            "{C:attention}商店{}内不再出现{C:tarot}塔罗牌"}
 
 end
 
