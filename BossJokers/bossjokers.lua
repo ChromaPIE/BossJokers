@@ -996,7 +996,7 @@ function SMODS.INIT.BossJokers()
             name = "{C:red}头{}小丑",
             text = {
                 "重新触发",
-                "所有{C:hearts}红心{}牌"
+                "所有{C:hearts}红桃{}牌"
             }
         },
         theplant = {
