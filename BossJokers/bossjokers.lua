@@ -275,6 +275,7 @@ local jokers = {
      end,
 
     loc_def = function(self)
+        return {self.ability.extra}
     end
     },
 
@@ -305,6 +306,7 @@ local jokers = {
          end,
     
         loc_def = function(self)
+            return {self.ability.extra}
         end
     },
 
@@ -342,6 +344,7 @@ local jokers = {
          end,
 
         loc_def = function(self)
+            return {self.ability.extra}
         end
     },
 
@@ -381,6 +384,7 @@ local jokers = {
          end,
     
         loc_def = function(self)
+            return {self.ability.extra}
         end
     },
 
@@ -421,7 +425,7 @@ local jokers = {
 
     theox = {
         name = "Ox Joker",
-        config = {max = 5},
+        config = {extra = {money = 1, max = 5}},
         pos = { x = 0, y = 0 },
         rarity= 3,
         cost = 10,
@@ -436,17 +440,17 @@ local jokers = {
         calculate = function(self,context)
             if context.cardarea == G.jokers then
                 if context.before then
-                    if G.GAME.hands[context.scoring_name].played > 5 then
+                    if G.GAME.hands[context.scoring_name].played * self.ability.extra.money > self.ability.extra.max then
                         return {
-                            message = localize('$')..5,
-                            ease_dollars(5),
+                            message = localize('$') .. self.ability.extra.max,
+                            ease_dollars(self.ability.extra.max),
                             colour = G.C.MONEY,
                             card = self
                         }
                     else
                         return {
-                            message = localize('$')..G.GAME.hands[context.scoring_name].played,
-                            ease_dollars(G.GAME.hands[context.scoring_name].played),
+                            message = localize('$')..G.GAME.hands[context.scoring_name].played * self.ability.extra.money,
+                            ease_dollars(G.GAME.hands[context.scoring_name].played * self.ability.extra.money),
                             colour = G.C.MONEY,
                             card = self
                         }
@@ -462,6 +466,7 @@ local jokers = {
          end,
     
         loc_def = function(self)
+            return{self.ability.extra.money, self.ability.extra.max}
         end
     },
 
@@ -500,6 +505,7 @@ local jokers = {
          end,
     
         loc_def = function(self)
+            return {self.ability.extra.Xmult}
         end
     },
 
@@ -535,6 +541,7 @@ local jokers = {
          end,
     
         loc_def = function(self)
+            return {self.ability.extra.size, self.ability.extra.xmult}
         end
     },
 
@@ -604,6 +611,7 @@ local jokers = {
          end,
     
         loc_def = function(self)
+            return {self.ability.extra.Xmult}
         end
     },
 
@@ -1009,21 +1017,21 @@ function SMODS.INIT.BossJokers()
         theneedle = {
             name = "{C:red}针{}小丑",
             text = {
-                "每回合{C:blue}+1{}出牌次数"
+                "每回合{C:blue}+#1#{}出牌次数"
             }
         },
         thewater = {
             name = "{C:red}水{}小丑",
             text = {
                 "售出本牌即可获得",
-                "{C:red}+3{}弃牌次数"
+                "{C:red}+#1#{}弃牌次数"
             }
         },
         thetooth = {
             name = "{C:red}牙齿{}小丑",
             text = {
                 "每张打出的牌",
-                "在计分时均给予{C:money}$1"
+                "在计分时均给予{C:money}$#1#"
             }
         },
         thearm = {
@@ -1031,14 +1039,14 @@ function SMODS.INIT.BossJokers()
             text = {
                 "售出本牌即可使",
                 "最常打出的{C:attention}牌型",
-                "{C:attention}提升{}3级"
+                "{C:attention}提升{}#1#级"
             }
         },
         thewall = {
-            name = "Wall Joker",
+            name = "{C:red}围墙{}小丑",
             text = {
-                "Sell this card to",
-                "{C:attention}Halve{} the blind"
+                "售出本牌时，当前盲注的",
+                "最低得分要求{C:attention}减半"
             }
         },
         theox = {
@@ -1046,22 +1054,23 @@ function SMODS.INIT.BossJokers()
             text = {
                 "出牌时，其{C:attention}牌型",
                 "每已被打出一次",
-                "给予{C:money}$1",
-                "{C:inactive}（至多给予$5）"
+                "给予{C:money}$#1#",
+                "{C:inactive}（至多给予$#2#）"
             }
         },
         theflint = {
             name = "{C:red}燧石{}小丑",
             text = {
                 "每张牌在计分时",
-                "给予{X:mult,C:white} X1.2 {}倍率",
+                "给予{X:mult,C:white} X#1# {}倍率",
             }
         },
         thepsychic = {
-            name = "Psychic Joker",
+            name = "{C:red}灵媒{}小丑",
             text = {
-                "{X:mult,C:white}X2{} mult if a hand",
-                "has {C:attention}less{} than 5 cards"
+                "若打出的牌",
+                "少于{C:attention}#1#{}张",
+                "{X:mult,C:white}X#2#{}倍率",
             }
         },
         thehook = {
@@ -1076,7 +1085,7 @@ function SMODS.INIT.BossJokers()
             text = {
                 "若出牌{C:attention}牌型{}为",
                 "本回合首次打出",
-                "{X:mult,C:white}X3{}倍率"
+                "{X:mult,C:white}X#1#{}倍率"
             }
         },
         theeye = {
