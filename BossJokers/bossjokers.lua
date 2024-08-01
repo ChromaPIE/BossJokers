@@ -1174,6 +1174,11 @@ function SMODS.INIT.BossJokers()
        end
    end
 
+    -- JokerDisplay mod support
+    if _G["JokerDisplay"] then
+        NFS.load(SMODS.findModByID("BossJokers").path .. "jokerdisplay_definitions.lua")()
+    end
+
 local draw_from_deck_to_hand_2 = G.FUNCS.draw_from_deck_to_hand
    function G.FUNCS.draw_from_deck_to_hand(self, e)
        draw_from_deck_to_hand_2(self, e)
@@ -1210,7 +1215,7 @@ local draw_from_deck_to_hand_3 = G.FUNCS.draw_from_deck_to_hand
              end
          end
      end
-
+    
 end
 
 ----------------------------------------------
